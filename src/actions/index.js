@@ -20,6 +20,8 @@ const fetchTodoFailute = (error) => ({
 export const fetchTodos = () => {
   return (dispatch) => {
     dispatch(fetchTodoRequest());
+    // fetch("./api/static/todos.json").then(
+    // fetch("https://upload-pic-and-todolist-server.herokuapp.com/static/todos.json").then(
     fetch("./mock/todos.json").then(
       response => {
         response.json().then(data => {
