@@ -5,8 +5,8 @@ class FilterSetter extends Component {
     // 把setFilter重命名为setListFilter
     const { filter, setFilter: setListFilter } = this.props;
     return (
-      <div>
-        <span>Show:</span>
+      <div className='filterSetter'>
+        <span>Show</span>
         <button disabled={filter === "all"} onClick={() => setListFilter("all")}>All</button>
         <button disabled={filter === "active"} onClick={() => setListFilter("active")}>Active</button>
         <button disabled={filter === "completed"} onClick={() => setListFilter("completed")}>Completed</button>

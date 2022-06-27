@@ -1,4 +1,5 @@
 import ToDoListWrap from "./components/ToDoListWrap";
+import './style.css'
 
 
 function App() {

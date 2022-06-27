@@ -1,4 +1,4 @@
-import { ADD_TODO, TOGGLE_TODO, SET_TODO_TEXT, SET_FILTER, FETCH_TODO_REQUEST, FETCH_TODO_SUCCESS, FETCH_TODO_FAILURE } from "./actionTypes"
+import { ADD_TODO, TOGGLE_TODO, SET_TODO_TEXT, SET_FILTER, FETCH_TODO_REQUEST, FETCH_TODO_SUCCESS, FETCH_TODO_FAILURE, SET_ALERT_STATUS, SET_ALERT_MSG } from "./actionTypes"
 
 let nextTodoId = 0;
 
@@ -23,6 +23,7 @@ export const fetchTodos = () => {
     // fetch("./api/static/todos.json").then(
     // fetch("https://upload-pic-and-todolist-server.herokuapp.com/static/todos.json").then(
     fetch("./mock/todos.json").then(
+      // fetch("./mock/todos-longlist.json").then(
       response => {
         response.json().then(data => {
           dispatch(fetchTodoSuccess(data));
@@ -72,4 +73,23 @@ export const setTodoText = text => ({
   type: SET_TODO_TEXT,
   text
 })
+
+/**
+ * 设置是否弹出警示框
+ * @param {*} alert
+ */
+export const setAlertFlag = alertFlag => ({
+  type: SET_ALERT_STATUS,
+  alertFlag
+})
+
+/**
+ * 设置警示框文字
+ * @param {*} alert
+ */
+export const setAlertMsg = alertMsg => ({
+  type: SET_ALERT_MSG,
+  alertMsg
+})
+
 

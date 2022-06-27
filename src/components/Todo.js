@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faStar } from '@fortawesome/free-solid-svg-icons'
 
 class Todo extends Component {
 
   render() {
-    const { id, completed, text, onClickk } = this.props
+    const { completed, text, onClickk } = this.props
     return (
-      <li style={{ textDecoration: completed ? "line-through" : "none" }} onClick={onClickk}>ID: {id}  ||  Item: {text}</li>
+      <li style={{ textDecoration: completed ? "line-through" : "none" }} onClick={onClickk}><FontAwesomeIcon icon={faStar} /><span>{text}</span></li>
     );
   }
 }
